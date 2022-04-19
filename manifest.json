@@ -73,7 +73,7 @@
         "devServer" : {
             "proxy" : {
                 "/manage" : {
-                    "target" : "https://www.baidu.com/",
+                    "target" : "https://xxxxxxx/",
                     "ws" : false,
                     "changeOrigin" : true
                 }
