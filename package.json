@@ -1,0 +1,54 @@
+{
+	"name": "merchant",
+	"version": "1.0.0",
+	"description": "demo",
+	"main": "main.js",
+	"dependencies": {
+		"Base64": "^1.1.0"
+	},
+	"devDependencies": {
+		"webpack-bundle-analyzer": "^4.4.2"
+	},
+	"uni-app": {
+		"scripts": {
+			"h5-dev": {
+				"title": "h5测试环境",
+				"env": {
+					"UNI_PLATFORM": "h5",
+					"NODE_ENV": "development"
+				}
+			},
+			"h5-pro": {
+				"title": "h5正式环境",
+				"env": {
+					"UNI_PLATFORM": "h5",
+					"NODE_ENV": "production"
+				}
+			},
+			"weixin-dev": {
+				"title": "小程序测试环境",
+				"env": {
+					"UNI_PLATFORM": "mp-weixin",
+					"NODE_ENV": "development"
+				}
+			},
+			"weixin-pro": {
+				"title": "小程序正式环境",
+				"env": {
+					"UNI_PLATFORM": "mp-weixin",
+					"NODE_ENV": "production"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

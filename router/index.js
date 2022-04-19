@@ -3,8 +3,17 @@ import {
 } from '@/common/util.js';
 // 全局路由表
 const routes = [{
+	path: "/pages/login/index",
+	name: "login_index"
+},{
 	path: "/pages/index/index",
 	name: "index"
+},{
+	path: "/pages/news/index",
+	name: "news_index"
+},{
+	path: "/pages/my/index",
+	name: "my_index"
 }];
 
 const findRoutes = function(name) {

@@ -1,13 +1,14 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		我的
+		<button class="btn" type="default" @click="fnOut">退出</button>
 	</view>
 </template>
 
 <script>
+	import {
+		mapActions,
+	} from 'vuex';
 	export default {
 		data() {
 			return {
@@ -18,35 +19,44 @@
 
 		},
 		methods: {
-
+			...mapActions(['logoutLogin']),
+			fnOut() {
+				const that = this;
+				uni.showModal({
+					title: '提示',
+					content: '是否退出登录',
+					success: function(res) {
+						if (res.confirm) {
+							that.loginout();
+						}
+					}
+				});
+			},
+			async loginout() {
+				const that = this;
+				try {
+					that.$fun.showLoading('退出中...');
+					await that.logoutLogin();
+					that.$fun.msg('退出成功');
+					setTimeout(() => {
+						that.$Router.reLaunch('login_index');
+					}, 500);
+				} catch (e) {
+					console.log(e);
+				} finally {
+					that.$fun.hideLoading();
+				}
+			}
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+		padding: 36rpx;
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+		.btn {
+			margin-top: 80rpx;
+		}
 	}
 </style>

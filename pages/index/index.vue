@@ -1,9 +1,6 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		 工作台
 	</view>
 </template>
 
@@ -24,7 +21,7 @@
 </script>
 
 <style>
-	.content {
+	/* .content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -48,5 +45,5 @@
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
-	}
+	} */
 </style>

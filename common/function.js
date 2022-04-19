@@ -1,7 +1,4 @@
-import pick from 'lodash.pick';
-const formPick = (data, arr) => {
-	return pick(data, arr);
-}
+ 
 const msg = (title, duration = 1500, mask = false, icon = 'none') => {
 	//统一提示方便全局修改
 	if (Boolean(title) === false) {
@@ -103,7 +100,6 @@ const setClipboardData = (txt, title) => {
 }
 
 export default {
-	formPick,
 	msg,
 	msgDelay,
 	showLoading,

@@ -27,13 +27,19 @@ const store = new Vuex.Store({
 			state.token = token;
 			uni.setStorageSync("token", token);
 		},
-
 	},
 	actions: {
 		login({
 			commit
 		}, payload) {
-			commit('SET_TOKEN', result.token);
+			commit('SET_TOKEN', payload);
+		},
+		logoutLogin({
+			commit,
+			dispatch
+		}) {
+			commit('SET_TOKEN', '');
+			uni.clearStorageSync();
 		},
 	}
 })

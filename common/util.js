@@ -1,3 +1,4 @@
+
 export function stringifyQuery(url, data) {
 	let str = url.split('#')
 	const hash = str[1] || ''

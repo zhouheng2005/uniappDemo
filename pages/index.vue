@@ -1,10 +1,7 @@
 <template>
-	<!-- <view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-	</view> -->
+	<view class="content">
+		<!-- 闪屏页面 -->
+	</view>
 </template>
 
 <script>
@@ -12,13 +9,21 @@
 		mapState,
 	} from 'vuex';
 	export default {
+		computed: {
+			...mapState(['token']),
+
+		},
 		data() {
 			return {
-				title: 'Hello'
+
 			}
 		},
 		onLoad() {
-
+			if (this.token) {
+				this.$Router.switchTab('index');
+			} else {
+				this.$Router.reLaunch('login_index');
+			}
 		},
 	}
 </script>
